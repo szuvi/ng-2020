@@ -1,0 +1,13 @@
+<h3>Who are you?</h3>
+<input [(ngModel)]="name"
+       placeholder="name"/>
+<input [(ngModel)]="familyName"
+       placeholder="Family name"/>
+
+<input type="submit" (click)="sayHello()"
+       value="hello from inpuit"/>
+
+<button (click)="sayHello()">hello</button>
+<button (click)="sayBye()">bye</button>
+<button (click)="name = ''">Reset name</button>
+
