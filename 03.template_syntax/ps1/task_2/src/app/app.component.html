@@ -1,0 +1,18 @@
+<h3>People in the room</h3>
+<p [style.background-color]="color">
+  Max allowed {{ maxAllowed }}
+</p>
+<p>Current number {{ current }}</p>
+
+<button (click)="addOne()">+1</button>
+<button [disabled]="current === 0"
+  (click)="removeOne()">-1</button>
+
+<h2 *ngIf="current >= maxAllowed">
+  Max number reached!
+</h2>
+
+<!--<p *ngFor="let name of names">-->
+<!--  {{ name }}-->
+<!--</p>-->
+
