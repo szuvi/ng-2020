@@ -1,0 +1,13 @@
+<h2>People in the room</h2>
+<p [style.background-color]="color">
+  Max allowed: {{ maxAllowed }}
+</p>
+<p>Currently in the room: {{ current }}</p>
+
+<button (click)="add()">+1</button>
+<button [disabled]="current === 0"
+  (click)="remove()">-1</button>
+
+<h4 *ngIf="current >= maxAllowed">
+  Max allowed reached!
+</h4>
