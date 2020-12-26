@@ -3,7 +3,7 @@
     "module": "CommonJS",
     "target": "ES5",
     "sourceMap": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strict": true
   },
   "exclude": [
