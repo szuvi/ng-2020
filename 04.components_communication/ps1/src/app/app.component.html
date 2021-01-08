@@ -1,0 +1,31 @@
+<h2>People in the room</h2>
+<p [style.background-color]="color">
+  Max allowed: {{ maxAllowed }}
+</p>
+<p>Current number: {{ peopleInTheRoom.length }}</p>
+
+<p>
+  <input type="text" [(ngModel)]="name" placeholder="Name"/>
+  <select [(ngModel)]="favoriteFramework">
+    <option *ngFor="let framework of frameworks"
+      [value]="framework">
+      {{ framework }}
+    </option>
+  </select>
+  <button (click)="add()">Add</button>
+</p>
+
+<h4 *ngIf="peopleInTheRoom.length >= maxAllowed">
+  Max allowed reached hed!
+</h4>
+
+<div *ngIf="peopleInTheRoom.length > 0">
+  <h3>Currently in the room are:</h3>
+  <button (click)="clear()">clear</button>
+
+  <p *ngFor="let person of peopleInTheRoom; index as idx">
+    {{ idx + 1 }}. {{ person.name }} - like {{ person.framework }}
+    <button (click)="remove(idx)">X</button>
+    <button (click)="edit(idx)">Edit</button>
+  </p>
+</div>
