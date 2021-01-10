@@ -4,16 +4,9 @@
 </p>
 <p>Current number: {{ peopleInTheRoom.length }}</p>
 
-<p>
-  <input type="text" [(ngModel)]="name" placeholder="Name"/>
-  <select [(ngModel)]="favoriteFramework">
-    <option *ngFor="let framework of frameworks"
-      [value]="framework">
-      {{ framework }}
-    </option>
-  </select>
-  <button (click)="add()">Add</button>
-</p>
+<app-form
+  (addPerson)="add($event)"
+  [frameworks]="availableFrameworks"></app-form>
 
 <h4 *ngIf="peopleInTheRoom.length >= maxAllowed">
   Max allowed reached hed!
@@ -26,6 +19,6 @@
   <p *ngFor="let person of peopleInTheRoom; index as idx">
     {{ idx + 1 }}. {{ person.name }} - like {{ person.framework }}
     <button (click)="remove(idx)">X</button>
-    <button (click)="edit(idx)">Edit</button>
+<!--    <button (click)="edit(idx)">Edit</button>-->
   </p>
 </div>

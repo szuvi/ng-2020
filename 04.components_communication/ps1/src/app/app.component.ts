@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Person {
+export interface Person {
   name: string;
   framework: string;
 }
@@ -12,28 +12,21 @@ interface Person {
 })
 export class AppComponent {
   maxAllowed = 16;
-  favoriteFramework: string;
-  name: string;
   peopleInTheRoom: Array<Person> = [];
   color: string;
 
-  public frameworks: Array<string> = [
+  public availableFrameworks: Array<string> = [
     'Angular',
     'React',
     'Vue'
   ]
 
-  add() {
+  add(person: Person) {
     if (this.peopleInTheRoom.length >= this.maxAllowed) {
       alert('The room is full');
 
     } else {
-      this.peopleInTheRoom.push({
-        name: this.name,
-        framework: this.favoriteFramework
-      });
-      this.name = '';
-      this.favoriteFramework = '';
+      this.peopleInTheRoom.push(person);
       this._updateColors();
     }
   }
@@ -43,13 +36,13 @@ export class AppComponent {
     this._updateColors();
   }
 
-  edit(index) {
-    const person = this.peopleInTheRoom[index];
-    this.name = person.name;
-    this.favoriteFramework = person.framework;
-
-    this.remove(index);
-  }
+  // edit(index) {
+  //   const person = this.peopleInTheRoom[index];
+  //   this.name = person.name;
+  //   this.favoriteFramework = person.framework;
+  //
+  //   this.remove(index);
+  // }
 
   clear() {
     this.peopleInTheRoom = [];
