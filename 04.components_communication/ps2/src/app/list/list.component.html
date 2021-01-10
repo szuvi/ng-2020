@@ -1,0 +1,16 @@
+<h3>Currently in the room are:</h3>
+<button (click)="clear()">clear</button>
+
+<select [(ngModel)]="frameworkFilter">
+  <option value="all">all</option>
+  <option *ngFor="let framework of frameworks"
+          [value]="framework">
+    {{ framework }}
+  </option>
+</select>
+
+<p *ngFor="let person of people | filter:frameworkFilter; index as idx">
+  {{ idx + 1 }}. {{ person.name }} - like {{ person.framework }}
+  <button (click)="delete(idx)">X</button>
+<!--  <button (click)="edit(idx)">Edit</button>-->
+</p>

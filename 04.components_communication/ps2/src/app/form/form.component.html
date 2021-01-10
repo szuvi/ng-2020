@@ -1,0 +1,10 @@
+<p>
+  <input type="text" [(ngModel)]="name" placeholder="Name"/>
+  <select [(ngModel)]="favoriteFramework">
+    <option *ngFor="let framework of frameworks"
+            [value]="framework">
+      {{ framework }}
+    </option>
+  </select>
+  <button (click)="add()">Add</button>
+</p>
