@@ -6,6 +6,8 @@
 
 <app-form
   (addPerson)="add($event)"
+  [name]="nameToEdit"
+  [favoriteFramework]="frameworkToEdit"
   [frameworks]="availableFrameworks"></app-form>
 
 <h4 *ngIf="peopleInTheRoom.length >= maxAllowed">
@@ -16,5 +18,7 @@
   <app-list
     (clearList)="clear()"
     (removeAtIndex)="remove($event)"
-    [people]="peopleInTheRoom"></app-list>
+    (editAtIndex)="edit($event)"
+    [people]="peopleInTheRoom"
+    [frameworks]="availableFrameworks"></app-list>
 </div>

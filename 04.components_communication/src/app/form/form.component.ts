@@ -9,8 +9,8 @@ import {Person} from "../app.component";
 export class FormComponent implements OnInit {
   @Input() public frameworks: Array<string>;
   @Output() addPerson = new EventEmitter<Person>();
-  name: string;
-  favoriteFramework: string;
+  @Input() name: string;
+  @Input() favoriteFramework: string;
   constructor() { }
 
   ngOnInit(): void {

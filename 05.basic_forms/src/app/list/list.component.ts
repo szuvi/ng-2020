@@ -8,26 +8,27 @@ import {Person} from "../app.component";
 })
 export class ListComponent implements OnInit {
   @Input() people: Array<Person>;
-  @Input() frameworks: Array<string>;
-
-  @Output() remove = new EventEmitter<number>();
+  @Input() public frameworks: Array<string>;
   @Output() clearList = new EventEmitter<void>();
-  @Output() edit = new EventEmitter<number>();
-
-  public frameworkFilter = 'all';
-
+  @Output() removeAtIndex = new EventEmitter<number>();
+  @Output() editAtIndex = new EventEmitter<number>();
+  public filterByFramework = 'all';
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public delete(index) {
-    this.remove.emit(index);
-  }
-
-  public clear() {
+  clear() {
     this.clearList.emit();
   }
 
+  remove(index) {
+    this.removeAtIndex.emit(index);
+  }
+
+  edit(index) {
+    this.editAtIndex.emit(index);
+
+  }
 
 }

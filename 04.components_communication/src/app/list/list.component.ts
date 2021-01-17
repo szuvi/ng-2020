@@ -8,8 +8,11 @@ import {Person} from "../app.component";
 })
 export class ListComponent implements OnInit {
   @Input() people: Array<Person>;
+  @Input() public frameworks: Array<string>;
   @Output() clearList = new EventEmitter<void>();
   @Output() removeAtIndex = new EventEmitter<number>();
+  @Output() editAtIndex = new EventEmitter<number>();
+  public filterByFramework = 'all';
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +24,11 @@ export class ListComponent implements OnInit {
 
   remove(index) {
     this.removeAtIndex.emit(index);
+  }
+
+  edit(index) {
+    this.editAtIndex.emit(index);
+
   }
 
 }

@@ -15,6 +15,9 @@ export class AppComponent {
   peopleInTheRoom: Array<Person> = [];
   color: string;
 
+  public nameToEdit;
+  public frameworkToEdit;
+
   public availableFrameworks: Array<string> = [
     'Angular',
     'React',
@@ -26,6 +29,10 @@ export class AppComponent {
       alert('The room is full');
 
     } else {
+      // this.peopleInTheRoom = [
+      //   ...this.peopleInTheRoom,
+      //   person
+      // ];
       this.peopleInTheRoom.push(person);
       this._updateColors();
     }
@@ -36,13 +43,13 @@ export class AppComponent {
     this._updateColors();
   }
 
-  // edit(index) {
-  //   const person = this.peopleInTheRoom[index];
-  //   this.name = person.name;
-  //   this.favoriteFramework = person.framework;
-  //
-  //   this.remove(index);
-  // }
+  edit(index) {
+    const person = this.peopleInTheRoom[index];
+    this.nameToEdit = person.name;
+    this.frameworkToEdit = person.framework;
+
+    this.remove(index);
+  }
 
   clear() {
     this.peopleInTheRoom = [];

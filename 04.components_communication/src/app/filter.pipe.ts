@@ -5,14 +5,12 @@ import {Person} from "./app.component";
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-
-  transform(values: Array<Person>, selectedFramework: string): Array<Person> {
-    if (selectedFramework === 'all') {
+  transform(values: Array<Person>, framework: string = 'all', count): Array<Person> {
+    if (framework === 'all') {
       return values;
     }
-
     return values.filter((person) => {
-      return person.framework.toLocaleLowerCase() === selectedFramework.toLocaleLowerCase();
+      return person.framework === framework;
     });
   }
 
