@@ -13,6 +13,10 @@
 ### 4. Components communication, pipes
 [presentation](https://edu.chrum.it/js_dev_ng/lecture_4.html) | [pdf](https://edu.chrum.it/js_dev_ng/pdfs/Angular_developer.lecture_4.pdf) | [example](https://stackblitz.com/edit/angular-components-communication-and-pipe)
 
+### 5. Basic forms, template reference variables
+[presentation](https://edu.chrum.it/js_dev_ng/lecture_5.html) | [pdf](https://edu.chrum.it/js_dev_ng/pdfs/Angular_developer.lecture_5.pdf) | [example](https://stackblitz.com/edit/angular-age-verification-form)
+
+
 ## Authors
 
 [Chrystian Ruminowicz](http://chrum.it)
