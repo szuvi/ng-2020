@@ -1,10 +1,18 @@
-<p>
-  <input type="text" [(ngModel)]="name" placeholder="Name"/>
-  <select [(ngModel)]="favoriteFramework">
-    <option *ngFor="let framework of frameworks"
-            [value]="framework">
-      {{ framework }}
-    </option>
-  </select>
-  <button (click)="add()">Add</button>
-</p>
+<form #personForm="ngForm">
+  <p>
+    <input type="text" name="name"
+           minlength="3"
+           required
+           [(ngModel)]="name" placeholder="Name"/>
+    <select name="favoriteFramework"
+            required
+            [(ngModel)]="favoriteFramework">
+      <option *ngFor="let framework of frameworks"
+              [value]="framework">
+        {{ framework }}
+      </option>
+    </select>
+    <button [disabled]="personForm.valid === false"
+            (click)="add(personForm.form)">Add</button>
+  </p>
+</form>
