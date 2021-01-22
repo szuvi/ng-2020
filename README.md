@@ -45,8 +45,8 @@ Two pages
 - display current amount of points
 - display time spent wile playing  
 
-**extra points version shold additionally have:**
-- there should be 'gameplay history' with all actions and each entry should have
+**extra points version should additionally have:**
+- there should be a 'gameplay history' with all actions and each entry should have
     - timestamp
     - action name (player started the game, paused, line cleared...)
 - gameplay history should be
