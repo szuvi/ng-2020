@@ -1,0 +1,27 @@
+<form #form="ngForm" (submit)="submitForm(form.form)">
+
+  <label>Your name:</label>
+  <input ngModel #name="ngModel" name="name" type="text"
+         required
+         minlength="3"/>
+  <div *ngIf="name.touched && name.valid === false">
+    Incorrect name
+  </div>
+
+  <br/>
+
+  <label>Your email:</label>
+  <input ngModel #email="ngModel" name="email" type="text"
+         required
+         email/>
+  <div *ngIf="email.touched && email.valid === false">
+    Incorrect email
+  </div>
+
+  <br/>
+
+  <button type="submit" [disabled]="!form.valid">
+    Start
+  </button>
+
+</form>
