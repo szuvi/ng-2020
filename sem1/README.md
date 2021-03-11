@@ -17,10 +17,6 @@
 ### 5. Basic forms, template reference variables
 [presentation](https://edu.chrum.it/js_dev_ng/lecture_5.html) | [pdf](https://edu.chrum.it/js_dev_ng/pdfs/Angular_developer.lecture_5.pdf) | [example](https://stackblitz.com/edit/angular-age-verification-form)
 
-### 6. Basic routing, services and DI
-[presentation](https://edu.chrum.it/js_dev_ng/lecture_6.html) | [pdf](https://edu.chrum.it/js_dev_ng/pdfs/Angular_developer.lecture_6.pdf) | [example](https://stackblitz.com/edit/angular-routing-and-services)
-
-
 ---
 ## Project
 
