@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-age-verification',
@@ -9,7 +10,7 @@ export class AgeVerificationComponent {
   public years: Array<number> = [];
   private _currentYear = new Date().getFullYear();
 
-  public constructor() {
+  public constructor(private _router: Router) {
     const minYear = this._currentYear - 100;
     for (let year = this._currentYear; year >= minYear; year--) {
       this.years.push(year);
@@ -33,6 +34,7 @@ export class AgeVerificationComponent {
     }
 
     alert('Success, access granted!');
+    this._router.navigate(['/shop']);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Category } from "../definitions";
+import { Category } from "../../definitions";
 
 @Component({
   selector: "app-category-selector",

@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AgeVerificationComponent } from './age-verification/age-verification.component';
 import { FormsModule } from '@angular/forms';
-import { CategorySelectorComponent } from './category-selector/category-selector.component';
-import { ProductsListComponent } from './products-list/products-list.component';
+import { CategorySelectorComponent } from './shop/category-selector/category-selector.component';
+import { ProductsListComponent } from './shop/products-list/products-list.component';
 import { SortPipe } from './sort.pipe';
+import { ShopComponent } from './shop/shop.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,18 @@ import { SortPipe } from './sort.pipe';
     AgeVerificationComponent,
     CategorySelectorComponent,
     ProductsListComponent,
-    SortPipe
+    SortPipe,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'age-verification', component: AgeVerificationComponent },
+      { path: 'shop', component: ShopComponent },
+      { path: '', redirectTo: '/age-verification', pathMatch: 'full' },
+      { path: '**', redirectTo: '/age-verification' }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
