@@ -1,0 +1,6 @@
+node_modules
+!bin/www
+!classes/RequestAuthValidator.js
+!classes/Scores.js
+!classes/WsHandler.js
+!app.js

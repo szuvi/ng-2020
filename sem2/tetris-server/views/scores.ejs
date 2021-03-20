@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Tetris server</title>
+    <link rel="stylesheet" href="/stylesheets/milligram.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>Tetris best scores</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Score</td>
+                <% if (admin) { %>
+                    <td>Auth key</td>
+                <% } %>
+            </tr>
+        </thead>
+        <% data.forEach(function(row) { %>
+            <tr>
+                <td><%= row.name %></td>
+                <td><%= row.score %></td>
+                <% if (admin) { %>
+                    <td><%= row.key %></td>
+                <% } %>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+
+</html>
