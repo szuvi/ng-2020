@@ -1,4 +1,4 @@
-# Angular Developer PB 2020/21
+# Angular Developer PB 2020/21 winter
 
 ---
 ## Lectures
