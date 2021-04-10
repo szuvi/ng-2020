@@ -9,6 +9,7 @@ import { ProductsListComponent } from './shop/products-list/products-list.compon
 import { SortPipe } from './sort.pipe';
 import { ShopComponent } from './shop/shop.component';
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import {RouterModule} from "@angular/router";
     RouterModule.forRoot([
       { path: 'age-verification', component: AgeVerificationComponent },
       { path: 'shop', component: ShopComponent },
-      { path: '', redirectTo: '/age-verification', pathMatch: 'full' },
-      { path: '**', redirectTo: '/age-verification' }
-    ])
+      // { path: '', redirectTo: '/age-verification', pathMatch: 'full' },
+      { path: '**', redirectTo: '/shop' }
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

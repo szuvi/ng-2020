@@ -14,7 +14,11 @@ export class ShopComponent {
 
 
   constructor(private _dataService: DataService) {
-    this.allCategories = this._dataService.getCategories();
+    this._dataService.getCategories()
+      .subscribe((result) => {
+         this.allCategories = result;
+
+      })
   }
 
   public onCategorySelected(category: Category): void {
