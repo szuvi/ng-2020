@@ -1,0 +1,12 @@
+[
+    { "name": "anis", "price": 3.44, "category": 1 },
+    { "name": "liquorice", "price": 9.99, "category": 1 },
+    { "name": "wormwood", "price": 6.99, "category": 1 },
+    { "name": "habanero", "price": 15, "category": 2 },
+    { "name": "tortilla", "price": 25, "category": 2 },
+    { "name": "milk", "price": 30, "category": 2 },
+    { "name": "white", "price": 99, "category": 3 },
+    { "name": "black", "price": 100, "category": 3 },
+    { "name": "weed", "price": 60, "category": 4 },
+    { "name": "mushrooms", "price": 100, "category": 4 }
+]
